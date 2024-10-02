@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>$WOODENG - Meme</title>
+    <style>
+        body {
+            font-family: 'Orbitron', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            background-color: black;
+        }
+        h1 {
+            color: white;
+        }
+        header {
+            width: 100%;
+            background-color: #333;
+            padding: 1rem 0;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 1rem;
+            font-size: 1.2rem;
+        }
+        .logo {
+            margin: 2rem 0;
+            text-align: center;
+        }
+        .logo img {
+            width: 300px;
+            height: auto;
+        }
+        main {
+            color: white;
+        }
+        .preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="preloader">
+        <div class="preloader-spinner"></div>
+    </div>
+
+    <script>
+        window.addEventListener('load', function() {
+            const preloader = document.querySelector('.preloader');
+            const text = 'Welcome to $WOODENG';
+            let index = 0;
+
+            function decodeText() {
+                if (index < text.length) {
+                    let decodedText = '';
+                    for (let i = 0; i < text.length; i++) {
+                        if (i <= index) {
+                            decodedText += text[i];
+                        } else {
+                            decodedText += '.';
+                        }
+                    }
+                    preloader.textContent = decodedText;
+                    index++;
+                    setTimeout(decodeText, 100);
+                } else {
+                    setTimeout(function() {
+                        preloader.style.display = 'none';
+                    }, 1000);
+                }
+            }
+
+            decodeText();
+        });
+
+        // Add styles for the preloader text
+        const style = document.createElement('style');
+        style.textContent = `
+            .preloader {
+                color: white;
+                font-size: 24px;
+                font-family: 'Courier New', monospace;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+    <header>
+        <nav>
+            <a href="#pump">Pump</a>
+            <a href="#telegram">Telegram</a>
+            <a href="#twitter">Twitter</a>
+            <a href="#dexscreener">Dexscreener</a>
+        </nav>
+    </header>
+    <main>
+        <div class="logo">
+            <img src="woodeng.png" alt="$WOODENG Beaver Logo">
+        </div>
+       <center>
+        <h1>Welcome to <span class="blink">$WOODENG</span></h1>
+        <p>Fun token</p>
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+            .copy-container {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin: 20px 0;
+                font-family: 'Orbitron', sans-serif;
+            }
+            .copy-label {
+                color: white;
+                font-size: 1.4rem;
+                margin-right: 10px;
+                font-weight: 700;
+            }
+            .copy-text {
+                background-color: #333;
+                color: white;
+                padding: 10px;
+                border-radius: 5px;
+                font-size: 1.2rem;
+            }
+            .copy-button {
+                background-color: black;
+                color: white;
+                border: 2px solid white;
+                padding: 10px 20px;
+                margin-left: 10px;
+                cursor: pointer;
+                font-family: 'Orbitron', sans-serif;
+                font-size: 1rem;
+                border-radius: 5px;
+            }
+            .blink {
+                animation: blinker 2s linear infinite;
+            }
+            @keyframes blinker {
+                50% {
+                    opacity: 0;
+                }
+            }
+        </style>
+        <div class="copy-container">
+            <span class="copy-label">CA:</span>
+            <div class="copy-text" id="contract-address">DEyebZ5eoj3Z1QVmopdvwLemkkyenm4uQsSeX1enpump</div>
+            <button class="copy-button" onclick="copyToClipboard()">COPY</button>
+        </div>
+        <script>
+            function copyToClipboard() {
+                const text = document.getElementById('contract-address').innerText;
+                navigator.clipboard.writeText(text).then(() => {
+                    alert('CA copied to clipboard!');
+                });
+            }
+        </script>
+    </center>
+    </main>
+    <section class="investment-reassurance">
+        <div class="reassurance-container">
+            <div class="reassurance-item">
+                <h3>Secure Investment</h3>
+                <p>FAN token is built on a robust blockchain, ensuring the safety and security of your investment. Our smart contracts have undergone rigorous audits to protect your assets.</p>
+            </div>
+            <div class="reassurance-item">
+                <h3>Strong Community</h3>
+                <p>Join a thriving community of FAN token holders. Our engaged and supportive network drives the project forward, creating long-term value for all investors.</p>
+            </div>
+            <div class="reassurance-item">
+                <h3>Innovative Technology</h3>
+                <p>FAN token leverages cutting-edge blockchain technology to provide a seamless and efficient investment experience. Stay ahead of the curve with our forward-thinking approach.</p>
+            </div>
+        </div>
+    </section>
+    <style>
+        .investment-reassurance {
+            background-color: #000;
+            padding: 2rem 0;
+            width: 100%;
+        }
+        .reassurance-container {
+            display: flex;
+            justify-content: space-around;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .reassurance-item {
+            background-color: #000;
+            border: 2px solid #fff;
+            color: #fff;
+            padding: 1.5rem;
+            width: 30%;
+            text-align: center;
+        }
+        .reassurance-item h3 {
+            margin-top: 0;
+        }
+    </style>
+    <style>
+        .investment-info {
+            background-color: #fff;
+            </style>
+    
+    <footer style="width: 100%; background-color: #333; color: white; text-align: center; padding: 1rem 0; margin-top: auto;">
+        <p>© 2024 WOODENG. All rights reserved.</p>
+    </footer>
+</body>
+</html>
