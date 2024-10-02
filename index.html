@@ -149,7 +149,7 @@
                 border-radius: 5px;
                 font-size: 1.2rem;
             }
-            .copy-button {
+            .copy-button, .buy-button {
                 background-color: black;
                 color: white;
                 border: 2px solid white;
@@ -159,6 +159,8 @@
                 font-family: 'Orbitron', sans-serif;
                 font-size: 1rem;
                 border-radius: 5px;
+                text-decoration: none;
+                display: inline-block;
             }
             .blink {
                 animation: blinker 2s linear infinite;
@@ -173,6 +175,9 @@
             <span class="copy-label">CA:</span>
             <div class="copy-text" id="contract-address">DEyebZ5eoj3Z1QVmopdvwLemkkyenm4uQsSeX1enpump</div>
             <button class="copy-button" onclick="copyToClipboard()">COPY</button>
+        </div>
+        <div class="copy-container">
+            <a href="#" class="buy-button">BUY TOKEN</a>
         </div>
         <script>
             function copyToClipboard() {
